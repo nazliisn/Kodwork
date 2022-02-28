@@ -1,11 +1,10 @@
 import {StyleSheet, Dimensions} from 'react-native';
 
-export default StyleSheet.create({
+const base_style = StyleSheet.create({
   container: {
     flex: 1,
     borderWidth: 1,
     borderRadius: 10,
-    minHeight: 175,
     margin: 10,
     backgroundColor: 'white',
   },
@@ -46,3 +45,21 @@ export default StyleSheet.create({
     fontSize: 15,
   },
 });
+
+export default {
+  jobCard: StyleSheet.create({
+    ...base_style,
+    container: {
+      ...base_style.container,
+      minHeight: Dimensions.get('window').height / 5,
+    },
+  }),
+
+  favoriteJobCard: StyleSheet.create({
+    ...base_style,
+    container: {
+      ...base_style.container,
+      minHeight: 175,
+    },
+  }),
+};
